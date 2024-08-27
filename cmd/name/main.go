@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/jaeiya/go-template/internal/lib"
+	"github.com/jaeiya/go-template/lib"
 )
 
 func main() {
