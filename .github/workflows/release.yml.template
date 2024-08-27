@@ -19,6 +19,8 @@
 #         with:
 #           fetch-depth: 0
 
+#       # Shrinks the file size significantly and is currently a dependency of the
+#       # goreleaser config.
 #       - name: Download UPX
 #         run: |
 #           curl -L https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-amd64_linux.tar.xz | tar Jxvf - -C /usr/local/bin --strip-components=1 upx-4.2.4-amd64_linux/upx
