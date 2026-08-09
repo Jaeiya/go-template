@@ -4,7 +4,7 @@
         "label": "Debug Go",
         "request": "launch",
         "mode": "debug",
-        "program": "./cmd/billbank",
+        "program": "./",
         "cwd": "${ZED_WORKTREE_ROOT}",
     },
 ]

@@ -1,8 +1,7 @@
 version: 2
 
 builds:
-  - main: ./cmd/app_name # relative path to "main.go"
-    binary: "app_name_{{ .Timestamp }}_{{ .Os }}"
+  - binary: "appname_{{ .Os }}_{{ .Timestamp }}"
     env:
       - CGO_ENABLED=0
     ldflags:
