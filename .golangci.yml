@@ -6,13 +6,29 @@ run:
 linters:
     default: none
     enable:
-        - errcheck
         # - goconst
+        - errcheck
+        - bodyclose
+        - exhaustive
+        - sqlclosecheck
+        - makezero
+        - nolintlint
+        - unparam
+        - unconvert
+        - usestdlibvars
+        - gosec
+        - errname
+        - tparallel
+        - nakedret
+        - errorlint
         - govet
         - ineffassign
         - staticcheck
+        - wastedassign
         - unused
     settings:
+        nakedret:
+          max-func-lines: 0
         goconst:
             ignore-tests: true
         errcheck:
