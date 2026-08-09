@@ -9,6 +9,8 @@ builds:
       - -X main.version={{ .Version }}
       - -X main.commitSha={{ .ShortCommit }}
       - -X main.buildDate={{ .Date }}
+    flags:
+      - -trimpath
     goos:
       - windows
       - linux
