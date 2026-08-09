@@ -2,7 +2,7 @@ version: 2
 
 builds:
   # FIXME: rename "appname" to your actual apps name
-  - binary: "appname_{{ .Os }}_{{ .Timestamp }}"
+  - binary: 'appname_{{ .Os }}_build-{{ slice (printf "%d" .Timestamp) 0 9 }}'
     env:
       - CGO_ENABLED=0
     ldflags:
@@ -19,9 +19,6 @@ builds:
       - amd64
       - arm64
     no_unique_dist_dir: true
-
-snapshot:
-  version_template: "build-{{ .Timestamp }}"
 
 checksum:
   disable: true
