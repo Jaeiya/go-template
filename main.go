@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/jaeiya/go-template/internal"
 )
@@ -13,8 +14,10 @@ var (
 )
 
 func main() {
+	args := os.Args[1:]
 	fmt.Printf(
-		"\n\n   Version: %s\n CommitSha: %s\nBuildDate: %s\n\n",
+		"\n\n      Args: %+v\n   Version: %s\n CommitSha: %s\n BuildDate: %s\n\n",
+		args,
 		version,
 		commitSha,
 		buildDate,
