@@ -1,9 +1,10 @@
 version: 2
 
 builds:
-  - id: "koshime"
-    main: .
-    binary: koshime
+  - id: "app_name"
+    # Relative path to main.go
+    main: ./cmd/app_name
+    binary: app_name
     env:
       - CGO_ENABLED=0
     flags:
