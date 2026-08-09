@@ -7,6 +7,5 @@ import (
 )
 
 func main() {
-	fmt.Println("hello world")
-	internal.SomeNecessaryFunc()
+	fmt.Printf("   Version: %s\n CommitSha: %s\n", internal.Version, internal.CommitSha)
 }
