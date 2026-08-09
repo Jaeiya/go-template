@@ -1,6 +1,7 @@
 version: 2
 
 builds:
+  # FIXME: rename "appname" to your actual apps name
   - binary: "appname_{{ .Os }}_{{ .Timestamp }}"
     env:
       - CGO_ENABLED=0
