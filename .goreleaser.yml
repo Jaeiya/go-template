@@ -12,8 +12,6 @@ builds:
       - -X main.buildDate={{ .Date }}
     flags:
       - -trimpath
-    gcflags:
-      - "all=-B -l=120"
     goos:
       - windows
       - linux
