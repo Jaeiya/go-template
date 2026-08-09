@@ -1,41 +1,25 @@
 version: 2
 
 builds:
-  - id: "windows"
-    # FIXME: change app_name to your apps actual name, everywhere it appears
-    main: ./cmd/app_name
-    binary: "app_name{{ .ShortCommit }}"
+  - main: ./cmd/app_name # relative path to "main.go"
+    binary: "app_name_{{ .Timestamp }}_{{ .Os }}"
     env:
       - CGO_ENABLED=0
     ldflags:
-      # FIXME: change go-template to your apps directory name, everywhere it appears
-      - -X github.com/jaeiya/go-template/internal.Version={{ .Version }}
-      - -X github.com/jaeiya/go-template/internal.CommitSha={{ .ShortCommit }}
+      - -X main.version={{ .Version }}
+      - -X main.commitSha={{ .ShortCommit }}
+      - -X main.buildDate={{ .Date }}
     goos:
       - windows
-    goarch:
-      - amd64
-    no_unique_dist_dir: true
-
-  - id: "unix"
-    # FIXME: change app_name to your apps actual name, everywhere it appears
-    main: ./cmd/app_name
-    binary: "app_name{{ .ShortCommit }}_{{ .Os }}"
-    env:
-      - CGO_ENABLED=0
-    ldflags:
-      # FIXME: change go-template to your apps directory name, everywhere it appears
-      - -X github.com/jaeiya/go-template/internal.Version={{ .Version }}
-      - -X github.com/jaeiya/go-template/internal.CommitSha={{ .ShortCommit }}
-    goos:
       - linux
       - darwin
     goarch:
       - amd64
+      - arm64
     no_unique_dist_dir: true
 
 snapshot:
-  version_template: "build-{{ .ShortCommit }}"
+  version_template: "build-{{ .Timestamp }}"
 
 checksum:
   disable: true
