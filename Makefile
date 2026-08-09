@@ -87,7 +87,7 @@ $(eval $(RUN_ARGS):;@:)
 rundev: VERSION := $(shell git describe --tags --exact-match 2>/dev/null)
 rundev: COMMIT := $(shell git rev-parse --short HEAD)
 rundev: DISPLAY_VERSION := $(if $(VERSION),$(VERSION),"v0.0.0")
-rundev: DISPLAY_COMMIT := $(if $(COMMIT),$(COMMIT),"DEADBEEF")
+rundev: DISPLAY_COMMIT := $(if $(COMMIT),$(COMMIT),"d3adb33f")
 rundev: LDFLAGS  := -ldflags="-X 'main.version=$(DISPLAY_VERSION)-dev' -X 'main.commitSha=$(DISPLAY_COMMIT)' -X 'main.buildDate=N/A'"
 rundev:
 	@go run -gcflags="all=-N -l" $(LDFLAGS) . $(RUN_ARGS)
