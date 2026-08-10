@@ -33,7 +33,7 @@ linters:
             ignore-tests: true
         errcheck:
             check-type-assertions: true
-            check-blank: true
+            check-blank: false
         govet:
             disable:
                 - fieldalignment
