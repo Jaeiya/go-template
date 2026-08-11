@@ -6,7 +6,6 @@ run:
 linters:
     default: none
     enable:
-        # - goconst
         - errcheck
         - bodyclose
         - exhaustive
@@ -29,8 +28,6 @@ linters:
     settings:
         nakedret:
           max-func-lines: 0
-        goconst:
-            ignore-tests: true
         errcheck:
             check-type-assertions: true
             check-blank: false
