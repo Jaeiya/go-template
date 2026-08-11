@@ -27,6 +27,7 @@ linters:
         - unused
     settings:
         nakedret:
+          # I don't like naked returns
           max-func-lines: 0
         errcheck:
             check-type-assertions: true
