@@ -34,8 +34,6 @@ linters:
             # assignment to blank is considered 'handled'
             check-blank: false
         govet:
-            disable:
-                - fieldalignment
             enable-all: true
     exclusions:
         generated: lax
