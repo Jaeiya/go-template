@@ -1,7 +1,7 @@
 
 version: "2"
 run:
-    concurrency: 6
+    concurrency: 6 # TODO: change this to match your system
     tests: true
 linters:
     default: none
