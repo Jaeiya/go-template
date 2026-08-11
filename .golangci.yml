@@ -8,25 +8,25 @@ run:
 linters:
     default: none
     enable:
-        - errcheck
         - bodyclose
-        - exhaustive
-        - sqlclosecheck
-        - makezero
-        - nolintlint
-        - unparam
-        - unconvert
-        - usestdlibvars
-        - gosec
+        - errcheck
         - errname
-        - tparallel
-        - nakedret
         - errorlint
+        - exhaustive
+        - gosec
         - govet
         - ineffassign
+        - makezero
+        - nakedret
+        - nolintlint
+        - sqlclosecheck
         - staticcheck
-        - wastedassign
+        - tparallel
+        - unconvert
+        - unparam
         - unused
+        - usestdlibvars
+        - wastedassign
     settings:
         nakedret:
           # I don't like naked returns
