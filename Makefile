@@ -11,13 +11,13 @@ LINUX_INSTALL_DIR := /usr/local
 install: APP_NAME := appname
 install: VERSION := $(shell git describe --tags --exact-match 2>/dev/null)
 install: COMMIT := $(shell git rev-parse --short HEAD)
-install: LDFLAGS  := -ldflags="-s -w -X 'main.version=$(VERSION)' -X 'main.commitSha=$(COMMIT)'"
+install: LDFLAGS := -s -w -X 'main.version=$(VERSION)' -X 'main.commitSha=$(COMMIT)'
 install: DISPLAY_VERSION := $(if $(VERSION),$(VERSION),No Tag)
 install:
 	@echo "📦 Installing $(APP_NAME)"
 	@echo "   Version: $(DISPLAY_VERSION)"
 	@echo "   Commit:  $(COMMIT)"
-	@go install $(LDFLAGS) ./...
+	@go install -trimpath -ldflags="$(LDFLAGS)" ./...
 
 
 # Try to install Go on windows if it doesn't exist
