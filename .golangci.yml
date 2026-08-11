@@ -28,6 +28,8 @@ linters:
         - usestdlibvars
         - wastedassign
     settings:
+        exhaustive:
+            default-signifies-exhaustive: true
         nakedret:
           # I don't like naked returns
           max-func-lines: 0
