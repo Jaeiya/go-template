@@ -30,6 +30,7 @@ linters:
           max-func-lines: 0
         errcheck:
             check-type-assertions: true
+            # assignment to blank is considered 'handled'
             check-blank: false
         govet:
             disable:
