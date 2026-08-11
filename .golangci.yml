@@ -1,8 +1,10 @@
 
 version: "2"
+
 run:
     concurrency: 6 # INFO: depends on your dev environment
     tests: true    # INFO: developer preference (depends on project)
+
 linters:
     default: none
     enable:
@@ -44,10 +46,13 @@ linters:
         rules:
             - linters:
                 - errcheck
+              # disable checking defer funcs for unhandled err's
               source: '^\s*defer\s'
+
 issues:
     max-issues-per-linter: 0
     max-same-issues: 0
+
 formatters:
     exclusions:
         generated: lax
