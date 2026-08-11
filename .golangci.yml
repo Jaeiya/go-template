@@ -1,8 +1,8 @@
 
 version: "2"
 run:
-    concurrency: 6 # TODO: change this to match your system
-    tests: true
+    concurrency: 6 # INFO: depends on your dev environment
+    tests: true    # INFO: developer preference (depends on project)
 linters:
     default: none
     enable:
